@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Portal de not�cias</title>
+
+			<style>
+				body{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 100vh;
+					background-color: #f4f4f4;
+					flex-direction: column;
+				}
+			</style>
+		</head>
+	<body>
+
+		<h1>Not�cia</h1>
+
+
+		<table>
+			<tr>
+				<td>ID</td>
+				<td>Titulo</td>
+			</tr>
+			<tr>
+				<td><%= noticia[0].id_noticia %></td>
+				<td><%= noticia[0].titulo  %></td>
+				<td><%= noticia[0].noticia  %></td>
+			</tr>
+			<a href="/">home</a>
+		</table>
+	</body>
+</html>
