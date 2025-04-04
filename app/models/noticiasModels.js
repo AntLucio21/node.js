@@ -17,14 +17,14 @@ module.exports = function() {
         connection.query('insert into noticias set ?',noticia, callback);
     }
 // esse daqui é experimental ainda, na teoria ela deve receber o valor passado no paramentro do input da view que pedi para filtrar e encontrar uma noticia especifica ao vivo
-    this.buscarNoticias = function(termo, connection, callback){
-        let sql = 'select * from noticias where titulo like ? or noticia like ?';
-        // connection.query('select * from noticias where titulo like ? or noticia like ?',termo, callback);
+    // this.buscarNoticias = function(termo, connection, callback){
+    //     let sql = 'select * from noticias where titulo like ? or noticia like ?';
+    //     // connection.query('select * from noticias where titulo like ? or noticia like ?',termo, callback);
 
         
-        connection.query(sql, [`%${termo}%`,`%${termo}%`], callback);
+    //     connection.query(sql, [`%${termo}%`,`%${termo}%`], callback);
 
-    }
+    // }
 
     return this;
 }

@@ -19,8 +19,10 @@
 
 		<h1>Not�cia</h1>
 
+<!-- 
+		<input type="text" id="search" placeholder="Pesquisar notícia...">
+		<button onclick="buscarNoticias()">buscar termo</button> -->
 
-		<input type="text" id="search" placeholder="Pesquisar notícia..." onkeyup="buscarNoticias()">
 		<div id="resultados"></div>
 
 		<table>
@@ -43,26 +45,26 @@
 	<script>
 
 //está dando erro nesse script.. não reconhece como valor json e sim como html Erro ao buscar noticia:  SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-		function buscarNoticias() {
-			let termo = document.getElementById('search').value;
+		// function buscarNoticias() {
+		// 	let termo = document.getElementById('search').value;
 
-			fetch(`noticias?termo=${encodeURIComponent(termo)}`)
-				.then(response => response.json())
-				.then(data => {
-					var resultados = document.getElementById('resultados');
-					resultados.innerHTML = '';
+		// 	fetch(`noticias?termo=${encodeURIComponent(termo)}`)
+		// 		.then(response => response.json())
+		// 		.then(data => {
+		// 			var resultados = document.getElementById('resultados');
+		// 			// resultados.innerHTML = '';
 
-					data.forEach(noticias => {
+		// 			data.forEach(noticias => {
 						
-						document.getElementById("resultados").innerHTML = `<h3>${noticias.Titulo}</h3>`;
+		// 				// document.getElementById("resultados").innerHTML = `<h3>${noticias.Titulo}</h3>`;
 						
-						// var div = document.createElement('div');
-						// div.innerHTML = `<h3>${noticias.Titulo}</h3>`;//<p>${noticia.noticia}</p>
-						// resultados.appendChild(div);
-					});
-				})
-				.catch(error => console.error('Erro ao buscar noticia: ', error));
-		}
+		// 				var div = document.createElement('div');
+		// 				div.innerHTML = `<h3>${noticias.Titulo}</h3>`;//<p>${noticia.noticia}</p>
+		// 				resultados.appendChild(div);
+		// 			});
+		// 		})
+		// 		.catch(error => console.error('Erro ao buscar noticia: ', error));
+		// }
 
 	</script>
 	</body>
