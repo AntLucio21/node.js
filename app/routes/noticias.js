@@ -2,16 +2,12 @@
 
 module.exports = function(app) {    
     app.get('/noticias', function(req, res){
-    
-        var connection = app.config.dbConnection();
-        var noticiasModel = app.app.models.noticiasModels;
-
-        noticiasModel.getNoticias(connection, function(error, result){
-            res.render('noticias/noticias', {noticias : result});
-        });
-
+        app.app.controllers.noticias.noticias(app, req, res);
     });
 
+    app.get('/noticia', function(req, res){
+        app.app.controllers.noticias.noticia(app, req, res);
+    });
     //metodo de filtrar informação pelo titulo ou conteudo no caso, noticia
     // app.get('buscar-noticias', function(req, res){
     //     var termo = req.query.termo;
